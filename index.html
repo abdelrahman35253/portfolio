@@ -1,0 +1,218 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Web Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo">My<span>Portfolio.</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#tasks">My Tasks</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+
+                <h1>Hi, I'm <span>Abdelrahman Ahmed</span></h1>
+
+                <h2>Computer Science Student</h2>
+
+                <p class="description">
+                    I am a Computer Science student interested in web
+                    development and programming. I enjoy learning new
+                    technologies and building creative websites.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#tasks" class="btn">View My Tasks</a>
+                    <a href="#about" class="btn btn-outline">About Me</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="code-icon">&lt;/&gt;</div>
+                <h3>Web Development</h3>
+                <p>Learning today, building tomorrow.</p>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <p class="section-label">GET TO KNOW ME</p>
+            <h2 class="section-title">About Me</h2>
+
+            <div class="about-card">
+                <p>
+                    Hello! I am a student in the Computers and Information
+                    field, studying Software. I am currently developing
+                    my skills in HTML, CSS, and JavaScript.
+                </p>
+
+                <p>
+                    My goal is to build useful and attractive websites
+                    while continuously improving my programming skills.
+                </p>
+
+                <div class="skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Problem Solving</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="tasks" class="section tasks-section">
+            <p class="section-label">MY UNIVERSITY WORK</p>
+            <h2 class="section-title">My Tasks & Projects</h2>
+
+            <div class="projects">
+                <article class="project-card">
+                    <div class="project-number">01</div>
+                    <h3>Personal Portfolio</h3>
+
+                    <p>
+                        A personal website introducing me, my interests,
+                        and my web development learning journey.
+                    </p>
+
+                    <a href="#home" class="project-link">
+                        Explore Portfolio &rarr;
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">02</div>
+                    <h3>GET vs POST Methods</h3>
+
+                    <p>
+                        An educational task explaining the differences
+                        between HTTP GET and POST methods with examples.
+                    </p>
+
+                    <a href="#get-post" class="project-link">
+                        View Task &rarr;
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section id="get-post" class="section">
+            <p class="section-label">WEB DEVELOPMENT ASSIGNMENT</p>
+            <h2 class="section-title">GET vs POST Methods</h2>
+
+            <div class="about-card">
+                <h3>1. What is GET?</h3>
+                <p>
+                    GET is an HTTP method used to request data from
+                    a server. Parameters are commonly included in
+                    the URL as a query string.
+                </p>
+
+                <pre><code>&lt;form action="#" method="get"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;button type="submit"&gt;Search&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                <h3>2. What is POST?</h3>
+                <p>
+                    POST is an HTTP method commonly used to send data
+                    to a server, for example when submitting a form
+                    or creating a new resource.
+                </p>
+
+                <pre><code>&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                <h3>3. Main Differences</h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>GET</th>
+                                <th>POST</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Purpose</td>
+                                <td>Retrieve data</td>
+                                <td>Submit data</td>
+                            </tr>
+                            <tr>
+                                <td>Data location</td>
+                                <td>Usually in the URL</td>
+                                <td>Usually in the request body</td>
+                            </tr>
+                            <tr>
+                                <td>Bookmarking</td>
+                                <td>URL can be bookmarked</td>
+                                <td>Submitted data is not stored in the URL</td>
+                            </tr>
+                            <tr>
+                                <td>Typical use</td>
+                                <td>Search and retrieve</td>
+                                <td>Form submission and creating data</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>4. Conclusion</h3>
+                <p>
+                    GET and POST are important HTTP methods. GET is
+                    generally used to retrieve information, while POST
+                    is generally used to submit information to a server.
+                    POST does not encrypt data by itself; HTTPS is
+                    needed to protect data in transit.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <p class="section-label">LET'S CONNECT</p>
+            <h2 class="section-title">Contact Me</h2>
+
+            <div class="about-card contact-card">
+                <p>
+                    Thank you for visiting my portfolio!
+                    Feel free to contact me.
+                </p>
+
+                <a href="mailto:body76431@gmail.com" class="btn">
+                    Send Me an Email
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Abdelrahman Ahmed. All rights reserved.</p>
+    </footer>
+
+    <button id="topButton" title="Back to top" aria-label="Back to top">
+        &uarr;
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
