@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | Web Developer</title>
+    <title>Abdelrahman Ahmed | Web Developer</title>
+    <meta name="description" content="Portfolio of Abdelrahman Ahmed, a Computer Science student learning web development with HTML, CSS and JavaScript.">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,7 +21,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#tasks">My Tasks</a></li>
+                <li><a href="#tasks">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -24,7 +30,6 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <p class="welcome">WELCOME TO MY PORTFOLIO</p>
 
                 <h1>Hi, I'm <span>Abdelrahman Ahmed</span></h1>
 
@@ -37,8 +42,9 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#tasks" class="btn">View My Tasks</a>
-                    <a href="#about" class="btn btn-outline">About Me</a>
+                    <a href="#tasks" class="btn">View my projects</a>
+                    <a href="#about" class="btn btn-outline">About me</a>
+                    <a href="https://github.com/abdelrahman35253" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
                 </div>
             </div>
 
@@ -50,8 +56,7 @@
         </section>
 
         <section id="about" class="section">
-            <p class="section-label">GET TO KNOW ME</p>
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">About me</h2>
 
             <div class="about-card">
                 <p>
@@ -75,12 +80,11 @@
         </section>
 
         <section id="tasks" class="section tasks-section">
-            <p class="section-label">MY UNIVERSITY WORK</p>
-            <h2 class="section-title">My Tasks & Projects</h2>
+            <h2 class="section-title">Projects and coursework</h2>
 
             <div class="projects">
                 <article class="project-card">
-                    <div class="project-number">01</div>
+                    <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
                     <h3>Personal Portfolio</h3>
 
                     <p>
@@ -88,13 +92,13 @@
                         and my web development learning journey.
                     </p>
 
-                    <a href="#home" class="project-link">
-                        Explore Portfolio &rarr;
+                    <a href="https://github.com/abdelrahman35253/portfolio" class="project-link" target="_blank" rel="noopener">
+                        View source on GitHub
                     </a>
                 </article>
 
                 <article class="project-card">
-                    <div class="project-number">02</div>
+                    <div class="tags"><span>HTTP</span><span>HTML forms</span></div>
                     <h3>GET vs POST Methods</h3>
 
                     <p>
@@ -103,14 +107,13 @@
                     </p>
 
                     <a href="#get-post" class="project-link">
-                        View Task &rarr;
+                        Read the task
                     </a>
                 </article>
             </div>
         </section>
 
         <section id="get-post" class="section">
-            <p class="section-label">WEB DEVELOPMENT ASSIGNMENT</p>
             <h2 class="section-title">GET vs POST Methods</h2>
 
             <div class="about-card">
@@ -187,8 +190,7 @@
         </section>
 
         <section id="contact" class="section contact-section">
-            <p class="section-label">LET'S CONNECT</p>
-            <h2 class="section-title">Contact Me</h2>
+            <h2 class="section-title">Get in touch</h2>
 
             <div class="about-card contact-card">
                 <p>
@@ -196,9 +198,10 @@
                     Feel free to contact me.
                 </p>
 
-                <a href="mailto:body76431@gmail.com" class="btn">
-                    Send Me an Email
-                </a>
+                <div class="contact-actions">
+                    <a href="mailto:body76431@gmail.com" class="btn">Send me an email</a>
+                    <a href="https://github.com/abdelrahman35253" class="btn btn-outline" target="_blank" rel="noopener">GitHub profile</a>
+                </div>
             </div>
         </section>
     </main>
@@ -214,4 +217,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
