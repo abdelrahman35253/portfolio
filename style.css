@@ -430,4 +430,8 @@ button:focus-visible {
         scroll-behavior: auto !important;
         transition: none !important;
     }
+    .card-links {
+    display: flex;
+    gap: 20px;
+}
 }
