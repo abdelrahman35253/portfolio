@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET vs POST Methods | My Portfolio</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">My<span>Portfolio.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#tasks">My Tasks</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section assignment-content">
+            <a href="../index.html#tasks" class="back-link">&larr; Back to My Tasks</a>
+            <p class="section-label">WEB DEVELOPMENT ASSIGNMENT</p>
+            <h2 class="section-title">GET vs POST Methods</h2>
+
+            <div class="about-card">
+                <h3>1. What is GET?</h3>
+                <p>
+                    GET is an HTTP method used to request data from
+                    a server. Parameters are commonly included in
+                    the URL as a query string.
+                </p>
+
+                <pre><code>&lt;form action="#" method="get"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;button type="submit"&gt;Search&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                <h3>2. What is POST?</h3>
+                <p>
+                    POST is an HTTP method commonly used to send data
+                    to a server, for example when submitting a form
+                    or creating a new resource.
+                </p>
+
+                <pre><code>&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                <h3>3. Main Differences</h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>GET</th>
+                                <th>POST</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Purpose</td>
+                                <td>Retrieve data</td>
+                                <td>Submit data</td>
+                            </tr>
+                            <tr>
+                                <td>Data location</td>
+                                <td>Usually in the URL</td>
+                                <td>Usually in the request body</td>
+                            </tr>
+                            <tr>
+                                <td>Bookmarking</td>
+                                <td>URL can be bookmarked</td>
+                                <td>Submitted data is not stored in the URL</td>
+                            </tr>
+                            <tr>
+                                <td>Typical use</td>
+                                <td>Search and retrieve</td>
+                                <td>Form submission and creating data</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>4. Conclusion</h3>
+                <p>
+                    GET and POST are important HTTP methods. GET is
+                    generally used to retrieve information, while POST
+                    is generally used to submit information to a server.
+                    POST does not encrypt data by itself; HTTPS is
+                    needed to protect data in transit.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Abdelrahman Ahmed. All rights reserved.</p>
+    </footer>
+
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
