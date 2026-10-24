@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdelrahman Ahmed | Web Developer</title>
+    <meta name="description" content="Portfolio of Abdelrahman Ahmed, a Computer Science student learning web development with HTML, CSS and JavaScript.">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        try {
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo">My<span>Portfolio.</span></a>
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#assignments">Assignments</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Dark mode">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+
+                <h1>Hi, I'm <span>Abdelrahman Ahmed</span></h1>
+
+                <h2>Computer Science Student</h2>
+
+                <p class="description">
+                    I am a Computer Science student interested in web
+                    development and programming. I enjoy learning new
+                    technologies and building creative websites.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#assignments" class="btn">View my assignments</a>
+                    <a href="#about" class="btn btn-outline">About me</a>
+                    <a href="https://github.com/abdelrahman35253" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="code-icon">&lt;/&gt;</div>
+                <h3>Web Development</h3>
+                <p>Learning today, building tomorrow.</p>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2 class="section-title">About me</h2>
+
+            <div class="about-card">
+                <p>
+                    Hello! I am a student in the Computers and Information
+                    field, studying Software. I am currently developing
+                    my skills in HTML, CSS, and JavaScript.
+                </p>
+
+                <p>
+                    My goal is to build useful and attractive websites
+                    while continuously improving my programming skills.
+                </p>
+
+                <div class="skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Problem Solving</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="assignments" class="section tasks-section">
+            <h2 class="section-title">Assignments</h2>
+            <p class="section-intro">University assignments I have completed, each with the file to open or download.</p>
+
+            <div class="projects" id="assignments-grid">
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2 class="section-title">Get in touch</h2>
+
+            <div class="about-card contact-card">
+                <p>
+                    Thank you for visiting my portfolio!
+                    Feel free to contact me.
+                </p>
+
+                <div class="contact-actions">
+                    <a href="mailto:body76431@gmail.com" class="btn">Send me an email</a>
+                    <a href="https://github.com/abdelrahman35253" class="btn btn-outline" target="_blank" rel="noopener">GitHub profile</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Abdelrahman Ahmed. All rights reserved.</p>
+    </footer>
+
+    <button id="topButton" title="Back to top" aria-label="Back to top">
+        &uarr;
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
