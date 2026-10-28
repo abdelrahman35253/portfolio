@@ -42,6 +42,35 @@ const REPO_OWNER = "abdelrahman35253";
 const REPO_NAME = "portfolio";
 const FOLDER = "assignments";
 
+const FOLDER_BUTTONS = {
+    "web assignment 2": {
+        tag: "HTML",
+        links: [
+            { label: "Task 1", file: "index.html" },
+            { label: "Task 2", file: "table.html" },
+            { label: "Task 3", file: "task3.html" }
+        ]
+    }
+};
+
+function makeLink(label, href, newTab) {
+    const a = document.createElement("a");
+    a.className = "project-link";
+    a.href = href;
+    if (newTab) {
+        a.target = "_blank";
+        a.rel = "noopener";
+    }
+    a.textContent = label;
+    return a;
+}
+
+function capitalize(text) {
+    return text.replace(/\b[a-z]/g, function (c) {
+        return c.toUpperCase();
+    });
+}
+
 async function loadAssignments() {
     const grid = document.getElementById("assignments-grid");
     if (!grid) return;
@@ -61,14 +90,19 @@ async function loadAssignments() {
             const isDir = file.type === "dir";
             const dot = file.name.lastIndexOf(".");
             const hasExt = !isDir && dot > -1;
+            const custom = isDir ? FOLDER_BUTTONS[file.name.toLowerCase()] : null;
 
-            const ext = isDir ? "FOLDER" : (hasExt ? file.name.slice(dot + 1).toUpperCase() : "FILE");
+            let ext = "FILE";
+            if (isDir) ext = custom ? custom.tag : "FOLDER";
+            else if (hasExt) ext = file.name.slice(dot + 1).toUpperCase();
+
             const base = hasExt ? file.name.slice(0, dot) : file.name;
-            const title = base
-                .replace(/^\d+[-_.\s]*/, "")
-                .replace(/[-_]+/g, " ");
+            const title = capitalize(
+                base.replace(/^\d+[-_.\s]*/, "").replace(/[-_]+/g, " ")
+            );
 
-            const url = FOLDER + "/" + encodeURIComponent(file.name) + (isDir ? "/index.html" : "");
+            const folderUrl = FOLDER + "/" + encodeURIComponent(file.name);
+            const url = isDir ? folderUrl + "/index.html" : folderUrl;
 
             const card = document.createElement("article");
             card.className = "project-card";
@@ -84,28 +118,26 @@ async function loadAssignments() {
 
             const links = document.createElement("div");
             links.className = "card-links";
+            links.style.display = "flex";
+            links.style.flexWrap = "wrap";
+            links.style.rowGap = "10px";
 
-            const open = document.createElement("a");
-            open.className = "project-link";
-            open.href = url;
-            open.target = "_blank";
-            open.rel = "noopener";
-            open.textContent = "Open";
-
-            const second = document.createElement("a");
-            second.className = "project-link";
-            if (isDir) {
-                second.href = file.html_url;
-                second.target = "_blank";
-                second.rel = "noopener";
-                second.textContent = "Source code";
+            if (custom) {
+                custom.links.forEach(function (item) {
+                    links.appendChild(
+                        makeLink(item.label, folderUrl + "/" + item.file, true)
+                    );
+                });
+            } else if (isDir) {
+                links.appendChild(makeLink("Open", url, true));
+                links.appendChild(makeLink("Source code", file.html_url, true));
             } else {
-                second.href = url;
-                second.setAttribute("download", "");
-                second.textContent = "Download";
+                links.appendChild(makeLink("Open", url, true));
+                const dl = makeLink("Download", url, false);
+                dl.setAttribute("download", "");
+                links.appendChild(dl);
             }
 
-            links.append(open, second);
             card.append(tags, h3, links);
             grid.appendChild(card);
         });
