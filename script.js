@@ -53,17 +53,22 @@ async function loadAssignments() {
         );
         if (!res.ok) return;
 
-        const files = (await res.json()).filter(function (f) {
-            return f.type === "file" && !/^readme/i.test(f.name);
+        const items = (await res.json()).filter(function (f) {
+            return (f.type === "file" || f.type === "dir") && !/^readme/i.test(f.name);
         });
 
-        files.forEach(function (file) {
+        items.forEach(function (file) {
+            const isDir = file.type === "dir";
             const dot = file.name.lastIndexOf(".");
-            const ext = dot > -1 ? file.name.slice(dot + 1).toUpperCase() : "FILE";
-            const title = (dot > -1 ? file.name.slice(0, dot) : file.name)
+            const hasExt = !isDir && dot > -1;
+
+            const ext = isDir ? "FOLDER" : (hasExt ? file.name.slice(dot + 1).toUpperCase() : "FILE");
+            const base = hasExt ? file.name.slice(0, dot) : file.name;
+            const title = base
                 .replace(/^\d+[-_.\s]*/, "")
                 .replace(/[-_]+/g, " ");
-            const url = FOLDER + "/" + encodeURIComponent(file.name);
+
+            const url = FOLDER + "/" + encodeURIComponent(file.name) + (isDir ? "/index.html" : "");
 
             const card = document.createElement("article");
             card.className = "project-card";
@@ -87,13 +92,20 @@ async function loadAssignments() {
             open.rel = "noopener";
             open.textContent = "Open";
 
-            const dl = document.createElement("a");
-            dl.className = "project-link";
-            dl.href = url;
-            dl.setAttribute("download", "");
-            dl.textContent = "Download";
+            const second = document.createElement("a");
+            second.className = "project-link";
+            if (isDir) {
+                second.href = file.html_url;
+                second.target = "_blank";
+                second.rel = "noopener";
+                second.textContent = "Source code";
+            } else {
+                second.href = url;
+                second.setAttribute("download", "");
+                second.textContent = "Download";
+            }
 
-            links.append(open, dl);
+            links.append(open, second);
             card.append(tags, h3, links);
             grid.appendChild(card);
         });
