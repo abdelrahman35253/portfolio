@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registration</title>
+  <style>
+    body { font-family: "Times New Roman", serif; margin: 20px; }
+    h1 { text-align: center; }
+    table { margin: 0 auto; border-collapse: collapse; width: 560px; max-width: 100%; }
+    th, td { border: 1px solid #555; padding: 6px 10px; font-size: 14px; }
+    th { background: #eee; text-align: center; }
+    td.label { width: 35%; }
+    input[type=text], input[type=email], input[type=password], input[type=tel],
+    input[type=number], input[type=date], select { width: 95%; padding: 3px; }
+    textarea { width: 95%; }
+    .center { text-align: center; }
+    input:invalid:not(:placeholder-shown) { border: 2px solid red; }
+    input:valid:not(:placeholder-shown) { border: 2px solid green; }
+  </style>
+</head>
+<body>
+  <h1>Registration</h1>
+  <hr>
+  <form action="Thankyou.html" method="get">
+    <input type="hidden" name="userId" value="1001">
+
+    <table>
+      <tr><th colspan="2">Personal Data</th></tr>
+
+      <tr>
+        <td class="label"><label for="fname">First Name</label></td>
+        <td><input type="text" id="fname" name="firstName" placeholder="First name"
+             required pattern="[A-Za-z\u0600-\u06FF]+" title="Letters only (no numbers, spaces or symbols)"></td>
+      </tr>
+      <tr>
+        <td class="label"><label for="lname">Last Name</label></td>
+        <td><input type="text" id="lname" name="lastName" placeholder="Last name"
+             required pattern="[A-Za-z\u0600-\u06FF]+" title="Letters only (no numbers, spaces or symbols)"></td>
+      </tr>
+      <tr>
+        <td class="label"><label for="email">Email</label></td>
+        <td><input type="email" id="email" name="email" placeholder="example@domain.com"
+             required pattern="[^\s@]+@[^\s@]+\.[A-Za-z]{2,}" title="Enter a valid email, e.g. name@example.com"></td>
+      </tr>
+      <tr>
+        <td class="label"><label for="pass">Password</label></td>
+        <td><input type="password" id="pass" name="password" placeholder="Password" required
+             pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}"
+             title="At least 8 characters with one uppercase, one lowercase, one number and one special character"></td>
+      </tr>
+      <tr>
+        <td class="label"><label for="pass2">Repeat Password</label></td>
+        <td><input type="password" id="pass2" name="repeatPassword" placeholder="Repeat password" required
+             pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}"
+             title="At least 8 characters with one uppercase, one lowercase, one number and one special character"></td>
+      </tr>
+      <tr>
+        <td class="label"><label for="pic">Upload Picture</label></td>
+        <td><input type="file" id="pic" name="picture" accept="image/*"></td>
+      </tr>
+      <tr>
+        <td class="label">Gender</td>
+        <td>
+          <input type="radio" id="male" name="gender" value="male" required>
+          <label for="male">Male</label><br>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label>
+        </td>
+      </tr>
+      <tr>
+        <td class="label"><label for="faculty">Faculty</label></td>
+        <td>
+          <select id="faculty" name="faculty">
+            <option>Computer Science</option>
+            <option>Engineering</option>
+            <option>Medicine</option>
+            <option>Pharmacy</option>
+            <option>Commerce</option>
+            <option>Law</option>
+            <option>Arts</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="label"><label for="phone">Phone Number</label></td>
+        <td><input type="tel" id="phone" name="phone" placeholder="01XXXXXXXXX" maxlength="11"
+             required pattern="01[0125][0-9]{8}" title="Egyptian number: 11 digits starting with 010, 011, 012 or 015"></td>
+      </tr>
+      <tr>
+        <td class="label"><label for="gpa">GPA</label></td>
+        <td><input type="number" id="gpa" name="gpa" placeholder="0.0 - 4.0"
+             min="0" max="4" step="0.1" required title="Between 0.0 and 4.0, in steps of 0.1"></td>
+      </tr>
+      <tr>
+        <td class="label"><label for="dob">Date of Birth</label></td>
+        <td><input type="date" id="dob" name="dob" required></td>
+      </tr>
+
+      <tr><th colspan="2">Interests</th></tr>
+      <tr>
+        <td><input type="checkbox" id="i1" name="interests" value="programming"> <label for="i1">Programming</label></td>
+        <td><input type="checkbox" id="i2" name="interests" value="drawing"> <label for="i2">Drawing</label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="i3" name="interests" value="reading"> <label for="i3">Reading</label></td>
+        <td><input type="checkbox" id="i4" name="interests" value="football"> <label for="i4">Playing Football</label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="i5" name="interests" value="swimming"> <label for="i5">Swimming</label></td>
+        <td><input type="checkbox" id="i6" name="interests" value="music"> <label for="i6">Music</label></td>
+      </tr>
+
+      <tr><th colspan="2">About you</th></tr>
+      <tr>
+        <td colspan="2" class="center"><textarea name="about" rows="4" aria-label="About you"></textarea></td>
+      </tr>
+
+      <tr>
+        <td colspan="2" class="center">
+          <input type="submit" value="Ok">
+          <input type="reset" value="Cancel">
+        </td>
+      </tr>
+    </table>
+
+    <p class="center">
+      <input type="checkbox" id="terms" name="terms" required>
+      <a href="terms.html" target="_blank" rel="noopener">I agreed to all terms and conditions</a>
+    </p>
+  </form>
+</body>
+</html>
